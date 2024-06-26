@@ -17,4 +17,4 @@ This project consists mainly of two parts:
 
 - A graphical user interface (GUI) app developed using [PyQt6](https://pypi.org/project/PyQt6/) to provide a user-friendly method of interacting with our classifier. The source code can be found under `./src/`.
 
-  Currently, only Windows is supported. The release and installation instructions can be found [here](https://github.com/ZaniteA/heart-failure-predictor/releases/tag/v1.1).
+  Currently, only Windows is supported. The release and installation instructions can be found [here](https://github.com/ZaniteA/heart-failure-predictor/releases/tag/v1.2).

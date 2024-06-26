@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn.ensemble import _gb
-import scipy
 
 from patient_data import PatientData
 
@@ -75,11 +74,11 @@ class Model(object):
         df = pd.DataFrame(df_dict)
 
         # Log transform Oldpeak
-        df['Oldpeak'] = np.log(np.max(df['Oldpeak'] + 2.6, 0) + 1)
+        df['Oldpeak'] = np.log(np.max([df['Oldpeak'] + 2.6, np.zeros(1)], axis=0) + 1)
 
         # Sqrt transform RestingBP and Cholesterol
-        df['RestingBP'] = np.sqrt(np.max(df['RestingBP'] - 80, 0))
-        df['Cholesterol'] = np.sqrt(np.max(df['Cholesterol'] - 85, 0))
+        df['RestingBP'] = np.sqrt(np.max([df['RestingBP'] - 80, np.zeros(1)], axis=0))
+        df['Cholesterol'] = np.sqrt(np.max([df['Cholesterol'] - 85, np.zeros(1)], axis=0))
 
         # Standardize numerical columns with scaler
         df[self.numerical_columns] = self.scaler.transform(df[self.numerical_columns])
