@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn.ensemble import _gb
+import scipy
 
 from patient_data import PatientData
 
